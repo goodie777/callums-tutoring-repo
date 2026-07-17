@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
+#include <string.h>
 
 /* 
  * NOTE: USE THE STDINT.H DEFINITIONS, SO UINT8_T, INT8_T, UINT16_T, INT16_T, UINT32_T, INT32_T, UINT64_T, INT64_T
@@ -18,6 +19,10 @@
  */
 
 
+// part one - Temperature Structures
+
+
+
 // PART 2 STRUCTURE, IGNORE FOR PART 1
 typedef struct
 {
@@ -33,7 +38,8 @@ typedef struct test_struct
 
 
 // PART 2 FUNCTION, IGNORE FOR PART 1
-void part_2_print_person(Person p);
+
+
 
 /* 
  * Part 1
@@ -43,11 +49,18 @@ void part_2_print_person(Person p);
  */
 
 void part_1(void) {
-    uint8_t temperatures[5];
+    uint8_t temperatures[5] = {
+        50, 30, 28, 12, 23
+    };
 
+
+    for (int i = 0; i<5; i++) {
+         printf("The temperature is %d, and the address is %p, the index of the array is %d\n", temperatures[i], &temperatures[i], i);
+    }
+    
 }
 
-
+void part_2_print_person(Person p);
 /* 
  * Part 2
  * 
@@ -67,15 +80,41 @@ void part_2(void) {
     // Now fill it with values
     my_first_struct.value = 5;
     my_first_struct.value2 = 10;
+
+
+    Person p1;
+    Person p2;
+
+    strcpy(p1.name, "Bob");
+    p1.age = 30;
+
+    strcpy(p2.name, "Alice");
+    p2.age = 40;
+
+    part_2_print_person(p1);
+    part_2_print_person(p2);
+
+    printf("Size of Person: %zu\n", sizeof(Person));
+    
 }
+
+
 
 void part_2_print_person(Person p) 
 {
+   printf("Name: %s\n", p.name);
+   printf("age: %i\n", p.age);
 
+   
+    
 }
 
 /* Main method here */
 int main(void) {
     part_1();
+    
     part_2();
+    
+    
 }
+
