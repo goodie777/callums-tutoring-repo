@@ -10,11 +10,17 @@ void print_result(int result);
  * Questions to answer here, or underneath in the code as additional comments:
  * 
  * - Which variables are local?
- * 
+ *   int final_calculation is the only local variable because it is declared inside the main() function. It is then assigned   *   the value returned by add(5,7). 
+ *
  * - Which variables are parameters?
- * 
+ *   A parameter is a variable that is listed inside the parenthese of a function definition. It acts as a placeholder
+ *   or container that receives a value when the function is called. Its like a container that the function uses to recieve    *   information. 
+ *   The parameters in the code are as follows: name, a,b, result
+ *   
  * - Which variables are visible in each function?
- * 
+ *    Visible means a variable that a function can access and use. A function can see a variable inside that function and 
+ *    a parameter given to that function. A function cannot see varaibles that belong to another function.
+ *  final_calculation stores the value returned by add(5,7), which is 12. The print_result(final_calculation) function then     *  passes that value to the result parameter, and printf() prints "The result of a + b is 12".
  */
 
 
