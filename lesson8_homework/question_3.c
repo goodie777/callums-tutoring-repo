@@ -14,6 +14,26 @@ int main(void)
 }
 
 
+// with pointers - dereferencing 
+
+#include <stdio.h>
+void addFive(int* value)
+{
+    *value = *value + 5;
+    printf("%d\n", *value);
+}
+
+int main(void)
+{
+    int number = 10;
+    int* p = &number;
+    
+    addFive(p);
+    printf("%d\n", number);
+    return 0;
+}
+
+
 /*
 Step	Current Function	Current Line	number	value	Output
 1		main(void)               9            		
